@@ -1,0 +1,41 @@
+# Addition Theorem: P(A ∪ B) = P(A) + P(B) - P(A ∩ B)
+def addition_theorem(prob_a, prob_b, prob_a_and_b):
+    """
+    Calculate the probability of A or B happening (union of A and B).
+    Args:
+        prob_a (float): Probability of event A.
+        prob_b (float): Probability of event B.
+        prob_a_and_b (float): Probability of both A and B happening (intersection).
+    Returns:
+        float: Probability of A or B happening.
+    """
+    return prob_a + prob_b - prob_a_and_b
+
+# Multiplication Theorem: P(A ∩ B) = P(A) * P(B|A)
+def multiplication_theorem(prob_a, prob_b_given_a):
+    """
+    Calculate the probability of both A and B happening (intersection of A and B).
+    Args:
+        prob_a (float): Probability of event A.
+        prob_b_given_a (float): Probability of event B given that A has occurred.
+    Returns:
+        float: Probability of A and B happening.
+    """
+    return prob_a * prob_b_given_a
+
+# Example: Addition Theorem
+# Probabilities
+prob_a = 0.3  # Probability of A
+prob_b = 0.4  # Probability of B
+prob_a_and_b = 0.1  # Probability of A and B happening together
+
+# Calculate P(A ∪ B)
+prob_a_or_b = addition_theorem(prob_a, prob_b, prob_a_and_b)
+print(f"Probability of A or B (P(A ∪ B)): {prob_a_or_b}")
+
+# Example: Multiplication Theorem
+prob_b_given_a = 0.5  # Probability of B given that A has occurred
+
+# Calculate P(A ∩ B)
+prob_a_and_b = multiplication_theorem(prob_a, prob_b_given_a)
+print(f"Probability of A and B (P(A ∩ B)): {prob_a_and_b}")
